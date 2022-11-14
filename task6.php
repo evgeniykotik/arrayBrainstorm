@@ -9,23 +9,28 @@ function lengthOfArray($array)
     return $i;
 }
 
-function task6($arrayA, $arrayB) {
-    $changedArray = $arrayA;
-    $length = lengthOfArray($arrayB);
-    for ($i = 0; $i < $length; $i++) {
-        $changedArray[] = $arrayB[$i];
+function task6($arrayA, $arrayB)
+{
+    $i = 0;
+    $j = 0;
+    $k = 0;
+    $result = [];
+    $lengthA = lengthOfArray($arrayA);
+    $lengthB = lengthOfArray($arrayB);
+    while ($i < $lengthA && $j < $lengthB) {
+        if ($arrayA[$i] < $arrayB[$j])
+            $result[$k++] = $arrayA[$i++];
+        else
+            $result[$k++] = $arrayB[$j++];
     }
-    $legthChangedArray = lengthOfArray($changedArray);
-    for ($i = 0; $i < $legthChangedArray - 1; $i++) {
-        for ($j = $i + 1; $j < $legthChangedArray; $j++) {
-            if ($changedArray[$i] > $changedArray[$j]) {
-                $temp = $changedArray[$i];
-                $changedArray[$i] = $changedArray[$j];
-                $changedArray[$j] = $temp;
-            }
-        }
+    while ($i < $lengthA) {
+        $result[$k++] = $arrayA[$i++];
     }
-    return $changedArray;
+    while ($j < $lengthB) {
+        $result[$k++] = $arrayB[$j++];
+    }
+    return $result;
 }
-var_dump(task6([1,2,3], [4,3,5]));
+
+var_dump(task6([1, 2, 3, 12, 15], [1, 3, 5, 8]));
 
