@@ -38,4 +38,4 @@ function taskArray5($array)
     return $result;
 }
 
-var_dump(taskArray5([1,1,1,2,2,0,0,1,2,0]));
+var_dump(taskArray5([1, 1, 1, 2, 2, 0, 0, 1, 2, 0]));
