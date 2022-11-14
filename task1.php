@@ -14,10 +14,10 @@ function task1($array)
     $length = lengthOfArray($array);
     $counter = $length - 1;
     $countFirst = 0;
-    while ($countFirst < $length && $array[$countFirst] >= 0) {///
+    while ($countFirst < $length && $array[$countFirst] >= 0) {
         $countFirst++;
     }
-    if ($countFirst == $length) {////
+    if ($countFirst == $length) {
         return "В массиве нет отрицательных чисел";
     }
     $sum = 0;
